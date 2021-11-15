@@ -1,0 +1,36 @@
+{
+    "beedy@gmail.com": {
+        "id": 1,
+        "name": "Akinniyi",
+        "email": "beedy@gmail.com",
+        "password": "123456",
+        "wallet": "747,823.21",
+        "currency": "fa fa-dollar-sign",
+        "tax": "1098737",
+        "imt": "",
+        "atcc": "",
+        "owner": "off",
+        "education": "",
+        "location": "Greenwich, London",
+        "nok": "",
+        "logo": "perkins.jpg",
+        "occupation": "Lawyer"
+    },
+    "joycestropes@gmail.com": {
+        "id": 2,
+        "name": "Joyce Doris Stropes",
+        "email": "joycestropes@gmail.com",
+        "password": "joyce89",
+        "wallet": "200,547, 000.00",
+        "currency": "fa fa-euro-sign",
+        "tax": "1458079",
+        "imt": "",
+        "atcc": "",
+        "owner": "on",
+        "education": "Freie Universit\u00e4t Berlin",
+        "location": "Berlin, Germany",
+        "nok": "",
+        "logo": "joyce.jpeg",
+        "occupation": "Self Employed"
+    }
+}

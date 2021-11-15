@@ -8,7 +8,7 @@ class AccountController extends Controller
 {
     private $_hist; 
     public function __construct() {
-        $path = storage_path() . "/app/json/hist.json"; 
+        $path = base_path("/resources/json/hist.json"); 
         $this->_hist = json_decode(file_get_contents($path), true);  
     }
 public function history() {

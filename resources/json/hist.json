@@ -1,0 +1,38 @@
+[
+    {
+        "ref": "S101m25ed-JAN-2021",
+        "description": "DEPOSIT, Germany Financial Dept",
+        "amount": "1, 103 Euro",
+        "date": "25-01-2021 10:18:59"
+    },
+    {
+        "ref": "S971t28d2-JAN-2021",
+        "description": "WIRE TRANSFER FROM IGI INSURANCE COMPANY",
+        "amount": "60, 000, 000 Euro",
+        "date": "28-01-2021 14:42:11"
+    },
+    {
+        "description": "WIRE TRANSFER",
+        "ref": "X53757187-Jan-2021",
+        "date": "29-01-2021 08:05",
+        "amount": "5,500.00 Euro"
+    },
+    {
+        "description": "WIRE TRANSFER",
+        "ref": "Iabb0d4ec-Jan-2021",
+        "date": "29-01-2021 08:17",
+        "amount": "1,080.00 Euro"
+    },
+    {
+        "description": "TRANSFER REVERSAL",
+        "ref": "X53757187-Jan-2021",
+        "date": "29-01-2021 09:30",
+        "amount": "5,500.00 Euro"
+    },
+    {
+        "description": "TRANSFER REVERSAL",
+        "ref": "Iabb0d4ec-Jan-2021",
+        "date": "29-01-2021 09:43",
+        "amount": "1,080.00 Euro"
+    }
+]
