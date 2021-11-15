@@ -24,3 +24,7 @@ Route::get('/auth', [LoginController::class, 'index']);
 Route::post('/auth/login', [LoginController::class, 'login']);
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/account/history/', [AccountController::class, 'history']);
+Route::get('/account/profile/', [AccountController::class, 'profile']);
+Route::get('/account/transfer/', [AccountController::class, 'transfer']);
+Route::get('/account/dashboard/', [AccountController::class, 'dashboard']);
+Route::get('/account/coming/', [AccountController::class, 'coming']);

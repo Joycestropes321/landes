@@ -26,7 +26,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
-            <a href="{{ url('') }}account/" class="nav-link active">
+            <a href="{{ url('/account/') }}" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Account Summary
@@ -35,7 +35,7 @@
             </a> 
           </li>
           <li class="nav-item">
-            <a href="{{ url('') }}account/profile" class="nav-link">
+            <a href="{{ url('/account/profile') }}" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Profile 
@@ -59,7 +59,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('') }}account/transfer" class="nav-link">
+                <a href="{{ url('/account/transfer') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>  International Transfer
                     </p>
@@ -70,7 +70,7 @@
            
 
            <li class="nav-item">
-            <a href="{{ url('') }}account/coming" class="nav-link">
+            <a href="{{ url('/account/coming') }}" class="nav-link">
               <i class="nav-icon fas fa-money-bill-wave-alt"></i>
               <p>
                 Loans 
@@ -78,7 +78,7 @@
             </a>
           </li>   
            <li class="nav-item">
-            <a href="{{ url('') }}account/coming" class="nav-link">
+            <a href="{{ url('/account/coming') }}" class="nav-link">
               <i class="nav-icon fas fa-plane"></i>
               <p>
                 Travel & Holiday
@@ -88,7 +88,7 @@
           </li>  
 
            <li class="nav-item">
-            <a href="{{ url('') }}account/coming" class="nav-link">
+            <a href="{{ url('/account/coming') }}" class="nav-link">
               <i class="nav-icon fas fa-film"></i>
               <p>
                 Movies & Event
@@ -106,7 +106,7 @@
           </li>  
 
            <li class="nav-item">
-            <a href="{{ url('') }}account/coming" class="nav-link">
+            <a href="{{ url('/account/coming') }}" class="nav-link">
               <i class="nav-icon fas fa-chart-bar"></i>
               <p>
                 Investment

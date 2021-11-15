@@ -1,23 +1,24 @@
-<?php $this->setSiteTitle(APP_NAME .' | Home'); ?>
+@extends('layouts.app')
 
 
- <?php $this->start('page_header') ?> 
- <!-- Content Header (Page header) -->
-    <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Profile</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Account</a></li>
-              <li class="breadcrumb-item active">User Profile</li>
-            </ol>
-          </div>
-        </div>
-    <!-- /.content-header -->
+@section('title', 'Coming soon')
 
-    <?php $this->end() ?>
- <?php $this->start('body') ?>
+  
+   @section('page_header')
+   <div class="row mb-2">
+    <div class="col-sm-6">
+      <h1>Profile</h1>
+    </div>
+    <div class="col-sm-6">
+      <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a href="#">Account</a></li>
+        <li class="breadcrumb-item active">User Profile</li>
+      </ol>
+    </div>
+  </div>
+   @endsection 
+
+    @section('content')
     <!-- Main content -->
    
         <!-- Small boxes (Stat box) -->
@@ -31,13 +32,13 @@
               <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-circle"
-                       src="<?=base_url.'public/dist/img/'.$this->user['logo']?>"
+                       src="{{ asset('dist/img/'.$user["logo"]) }}"
                        alt="User profile picture">
                 </div>
 
-                <h3 class="profile-username text-center"> <?=$this->user['name']?></h3>
+                <h3 class="profile-username text-center"> {{ $user['name'] }}</h3>
 
-                <p class="text-muted text-center"> <?=$this->user['occupation']?></p>
+                <p class="text-muted text-center"> {{ $user['occupation'] }}</p>
 
                 <ul class="list-group list-group-unbordered mb-3">
                    
@@ -50,13 +51,9 @@
                   
                 </ul>
  
- <?php 
- if($this->user['owner'] === "on") {
-  ?>
-  <a href="<?=base_url?>account/transfer" class="btn btn-primary btn-block"><b>Transfer</b></a>
-  <?php
- }
-       ?>         
+ 
+  <a href="{{ url('/account/transfer') }}" class="btn btn-primary btn-block"><b>Transfer</b></a>
+          
               </div>
               <!-- /.card-body -->
             </div>
@@ -73,14 +70,14 @@
 
                 <p class="text-muted">
                    <!-- University of Rochester City New York  -->
-                  <?php echo $this->user['education']?>
+                 {{ $user['education'] }}
                 </p>
 
                 <hr>
 
                 <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
 
-                <p class="text-muted">  <?=$this->user['location']?></p>
+                <p class="text-muted"> {{ $user['location'] }}</p>
 
                 <hr>
 
@@ -91,11 +88,7 @@
                 </p>
 
                 <hr>
-<!-- 
-                <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
-
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>-->
-              </div> 
+   </div> 
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
@@ -108,34 +101,18 @@
                   <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Activity</a></li>
                    <!-- <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li> -->
                 </ul>
-              </div><!-- /.card-header -->
+              </div> 
               <div class="card-body">
                 <div class="tab-content">
-                   <?php 
- if($this->user['owner'] === "on") {
-  ?>
+                   
                   <div class="active tab-pane" id="activity">
                     <!-- Post -->
-                   <?php 
-
-                    foreach ($this->logs as $line) {
-                      # code...
-                      echo '<div class="post">';
-                         echo  $line ;
- 
-                   echo '</div>';
-                    }
-
-                   ?>
-                    <!-- /.post --> 
- <?php
- } else {
-  echo '<div class="active tab-pane" id="activity">';
-
-echo 'Recent activities not available';
-  echo '</div>';
- }
-       ?>   
+                    {{-- @foreach ($logs as  $line)
+                    <div class="post">
+                        {{ $line }}
+                    </div>
+                    @endforeach --}}
+                   
                   </div>
                   <!-- /.tab-pane -->
                   
@@ -202,11 +179,9 @@ echo 'Recent activities not available';
       </div><!-- /.container-fluid -->
      
 
-    <?php $this->end() ?>
 
-
-
- <?php $this->start('scripts') ?>
-<script src="<?=base_url.'public/dist/js/pages/dashboard.js'; ?>"></script>
-
-    <?php $this->end() ?>
+      @endsection 
+     
+ @section('footer') 
+ <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
+ @endsection

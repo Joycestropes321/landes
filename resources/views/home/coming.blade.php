@@ -1,13 +1,9 @@
-<?php $this->setSiteTitle(APP_NAME .' | Coming soon'); ?>
+@extends('layouts.app')
 
 
- 
- <?php $this->start('body') ?>
-    <!-- Main content -->
-   <?php
+@section('title', 'Coming soon')
 
-   // var_dump($this->user);
-   ?>
+    @section('content')
         <!-- Small boxes (Stat box) -->
        
         <div class="container-fluid">
@@ -26,7 +22,6 @@
         <!-- /.row -->
       </div><!-- /.container-fluid -->
      
-
-    <?php $this->end() ?>
+@endsection
 
  

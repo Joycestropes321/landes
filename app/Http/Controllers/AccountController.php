@@ -29,4 +29,36 @@ $x++;
  } 
    
 }
+
+public function profile() {
+    $user = [];
+    if(session()->has('user')) {
+        $user = session()->get('user');
+    }
+  return view('home.profile')->with('user', $user);
+}
+
+public function transfer() {
+    $user = [];
+    if(session()->has('user')) {
+        $user = session()->get('user');
+    }
+  return view('home.transfer')->with('user', $user);
+}
+
+public function dashboard() {
+    $user = [];
+    if(session()->has('user')) {
+        $user = session()->get('user');
+    }
+  return view('home.dashboard');
+}
+
+public function coming() {
+    $user = [];
+    if(session()->has('user')) {
+        $user = session()->get('user');
+    }
+  return view('home.coming')->with('user', $user);
+}
 }

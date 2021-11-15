@@ -1,7 +1,10 @@
-<?php $this->setSiteTitle(APP_NAME .' | Transfer'); ?>
+@extends('layouts.app')
 
 
- <?php $this->start('page_header') ?>
+@section('title', 'Transfer')
+
+    @section('page_header')
+ 
  
  <!-- Content Header (Page header) -->
     <div class="row mb-2">
@@ -16,14 +19,9 @@
           </div>
         </div>
     <!-- /.content-header -->
+@endsection
 
-    <?php $this->end() ?>
- <?php $this->start('body') ?>
-    <!-- Main content -->
-   <?php
-
-   // var_dump($this->user);
-   ?>
+@section('content')
         <!-- Small boxes (Stat box) -->
        
         <div class="container-fluid">
@@ -36,11 +34,11 @@
                         <div class="col-sm-12">
                            <div class="info-box"> 
                               <div class="info-box-content">
-                                <?=$this->user['name']?>
-                                 <input type="text" readonly="" class="form-control" value="<?=$this->user['wallet']?>">
-                                 <input type="hidden" id="tax" class="form-control" value="<?=$this->user['tax']?>">
-                                 <input type="hidden" id="imt" class="form-control" value="<?=$this->user['imt']?>">
-                                 <input type="hidden" id="atcc" class="form-control" value="<?=$this->user['atcc']?>">
+                                {{ $user['name']  }}
+                                 <input type="text" readonly="" class="form-control" value="{{ $user['wallet']  }}">
+                                 <input type="hidden" id="tax" class="form-control" value="{{ $user['tax']  }}">
+                                 <input type="hidden" id="imt" class="form-control" value="{{ $user['imt']  }}">
+                                 <input type="hidden" id="atcc" class="form-control" value="{{ $user['atcc']  }}">
                               </div> 
                             </div> 
                         </div>
@@ -72,7 +70,7 @@
                         <div class="form-group row">
                         <label for="inputName" class="col-sm-12 col-form-label">Amount</label> 
                         <div class="col-sm-12">
-                             <input type="number" name="amount" min='0' max="<?=removeComma($this->user['wallet'])?>" class="form-control"> 
+                             {{-- <input type="number" name="amount" min='0' max="{{ removeComma($user['wallet'])  }}" class="form-control">  --}}
                         </div>
                       </div>
 
@@ -128,12 +126,10 @@
         <!-- /.row -->
       </div><!-- /.container-fluid -->
      
-
-    <?php $this->end() ?>
-
-
-
- <?php $this->start('scripts') ?>
-<script src="<?=base_url.'public/dist/js/pages/dashboard.js'; ?>"></script>
-
-    <?php $this->end() ?>
+ 
+@endsection 
+ @section('footer')
+   
+ <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
+ @endsection
+ 

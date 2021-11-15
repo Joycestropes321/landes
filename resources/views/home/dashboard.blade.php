@@ -1,6 +1,7 @@
-<?php $this->setSiteTitle(APP_NAME .' | Home'); ?>
- <?php $this->start('body') ?>
- 
+@extends('layouts.app')
+
+
+@section('title', 'Dashboard')
 <hr />
 
      
@@ -14,5 +15,4 @@
              
           </div>
        
-</div>
-    <?php $this->end() ?>
+</div> 
