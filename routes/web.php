@@ -16,10 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
+Route::get('/', [LoginController::class, 'index']);
 Route::get('/auth', [LoginController::class, 'index']);
 Route::post('/auth/login', [LoginController::class, 'login']);
 Route::get('/home', [HomeController::class, 'index']);
