@@ -38,9 +38,11 @@ class AppServiceProvider extends ServiceProvider
                 } else {
                     break;
                 }
-            }
-            // return $money;
+            } 
             return "<?php echo $money; ?>";
+        });
+        Blade::directive('removeComma', function ($value) {  
+            return "<?php echo str_replace(',','',$value); ?>";
         });
     }
 }

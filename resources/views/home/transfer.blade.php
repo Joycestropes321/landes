@@ -28,13 +28,14 @@
         <div class="row">
           <div class="col-md-12">
             <form class="form-horizontal"  id="transfer-form" method="post">
-                      <div class="form-group row">
+              @csrf
+                 <div class="form-group row">
                         <label for="inputName" class="col-sm-12 col-form-label">Transfer from</label>
 
                         <div class="col-sm-12">
                            <div class="info-box"> 
                               <div class="info-box-content">
-                                {{ $user['name']  }}
+                                {{-- {{ $user['name']  }} --}}
                                  <input type="text" readonly="" class="form-control" value="{{ $user['wallet']  }}">
                                  <input type="hidden" id="tax" class="form-control" value="{{ $user['tax']  }}">
                                  <input type="hidden" id="imt" class="form-control" value="{{ $user['imt']  }}">
@@ -70,7 +71,7 @@
                         <div class="form-group row">
                         <label for="inputName" class="col-sm-12 col-form-label">Amount</label> 
                         <div class="col-sm-12">
-                             {{-- <input type="number" name="amount" min='0' max="{{ removeComma($user['wallet'])  }}" class="form-control">  --}}
+                             <input type="number" name="amount" min='0' max="@removeComma($user['wallet'])" class="form-control"> 
                         </div>
                       </div>
 

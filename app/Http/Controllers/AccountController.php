@@ -3,13 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use File;
+use Illuminate\Support\Str;
 class AccountController extends Controller
 {
     private $_hist; 
+    private $_users; 
     public function __construct() {
         $path = base_path("resources/json/hist.json"); 
         $this->_hist = json_decode(file_get_contents($path), true);  
+
+        $user_path = base_path("resources/json/users.json"); 
+        $this->_users = json_decode(file_get_contents($user_path), true); 
     }
 public function history() {
 	 
@@ -33,7 +38,7 @@ $x++;
 public function profile() {
     $user = [];
     if(session()->has('user')) {
-        $user = session()->get('user');
+        $user = $this->_users[session()->get('email')];
     }
   return view('home.profile')->with('user', $user);
 }
@@ -41,7 +46,7 @@ public function profile() {
 public function transfer() {
     $user = [];
     if(session()->has('user')) {
-        $user = session()->get('user');
+      $user = $this->_users[session()->get('email')];
     }
   return view('home.transfer')->with('user', $user);
 }
@@ -49,9 +54,10 @@ public function transfer() {
 public function dashboard() {
     $user = [];
     if(session()->has('user')) {
-        $user = session()->get('user');
+      $user = $this->_users[session()->get('email')];
     }
-  return view('home.dashboard');
+  return view('home.dashboard')->with('user', $user);
+
 }
 
 public function coming() {
@@ -61,4 +67,102 @@ public function coming() {
     }
   return view('home.coming')->with('user', $user);
 }
+
+public function saveTax(Request $request) {
+  $payload = array(); 
+   
+ $email = session()->get('email'); 
+ if(in_array($request->input('tax'), config('constants.TAX') )) {
+   $this->_users[$email]['tax'] = $request->input('tax');
+   $newJsonFile = json_encode($this->_users, JSON_PRETTY_PRINT); 
+   File::put(resource_path('json/users.json'), $newJsonFile);
+    $payload['status'] = 200;
+   $payload['msg']  =   'Tax Clearance added successfully';
+ } else {
+   $payload['status'] = 400;
+   $payload['msg']  =   'Wrong code!!! Please type a correct code';
+ }
+ return response()->json($payload);
+}
+
+
+public function saveImt(Request $request) {
+  $payload = array(); 
+   
+ $email = session()->get('email'); 
+ if(in_array($request->input('imtc'), config('constants.IMTC') )) {
+   $this->_users[$email]['imt'] = $request->input('imtc');
+   $newJsonFile = json_encode($this->_users, JSON_PRETTY_PRINT);
+   File::put(resource_path('json/users.json'), $newJsonFile);
+    $payload['status'] = 200;
+   $payload['msg']  =   'Intl Transfer Clearance added successfully';
+ } else {
+   $payload['status'] = 400;
+   $payload['msg']  =   'Wrong code!!! Please type a correct code';
+ } 
+ return response()->json($payload);
+}
+
+public function saveAtcc(Request $request) {
+  $payload = array(); 
+   
+ $email = session()->get('email'); 
+ if(in_array($request->input('atc'), config('constants.ATCC'))) { 
+   $this->_users[$email]['atcc'] = $request->input('atc');
+   $newJsonFile = json_encode($this->_users, JSON_PRETTY_PRINT);
+   File::put(resource_path('json/users.json'), $newJsonFile);
+    // file_put_contents('app' . DS . 'users.json', $newJsonFile); 
+    $payload['status'] = 200;
+   $payload['msg']  =   'Anti-Terrorism Clearance added successfully';
+ } else {
+   $payload['status'] = 400;
+   $payload['msg']  =   'Wrong code!!! Please type a correct code';
+ }
+ 
+ return response()->json($payload);
+}
+
+
+public function confirmTransfer(Request $request) {
+  $payload = array(); 
+  
+ $email = session()->get('email');
+ $wallet = (float)removeComma($this->_users[$email]['wallet']);
+ $amount = (float)$request->input('amount');
+ if($amount <= $wallet) {
+ $newAmount = $wallet - $amount;
+   
+ $this->_users[$email]['wallet'] = formatMoney(abs($newAmount), true);
+  $newJsonFile = json_encode($this->_users, JSON_PRETTY_PRINT);
+  File::put(resource_path('json/users.json'), $newJsonFile); 
+
+  $tdate = date('d-m-Y H:i');
+ $ref =  chr(rand(65,90)).Str::random(9).'-'.date('M-Y'); 
+ 
+
+ $newData = array(
+   'description'=> 'WIRE TRANSFER',
+   'ref'=> $ref,
+   'date'=> $tdate,
+   'amount'=> formatMoney($request->input('amount'), true).' Euro'
+ );
+ array_push($this->_hist, $newData); 
+ $json_data = json_encode($this->_hist, JSON_PRETTY_PRINT); 
+ File::put(resource_path('json/hist.json'), $json_data);
+//  file_put_contents('app' . DS . 'hist.json', $json_data);
+  // $log =  $Beedy->create_log('Wired Money Transfer', 'app' . DS .'logs/default.log');
+  // if($log != true):
+  //   die('error logging file'. $log);
+  // endif;
+  $payload['status'] = 200;
+  $payload['msg']  =   'Transaction completed successfully';
+ } else {
+   $payload['status'] = 400;
+   $payload['msg']  =   'Insufficient fund';
+ } 
+ return response()->json($payload);
+//  echo json_encode($payload);
+}
+
+
 }

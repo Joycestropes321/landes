@@ -29,3 +29,9 @@ Route::get('/account/profile/', [AccountController::class, 'profile']);
 Route::get('/account/transfer/', [AccountController::class, 'transfer']);
 Route::get('/account/dashboard/', [AccountController::class, 'dashboard']);
 Route::get('/account/coming/', [AccountController::class, 'coming']);
+
+
+Route::post('/account/saveTax/', [AccountController::class, 'saveTax']);
+Route::post('/account/saveImt/', [AccountController::class, 'saveImt']);
+Route::post('/account/saveAtcc/', [AccountController::class, 'saveAtcc']);
+Route::post('/account/confirmTransfer/', [AccountController::class, 'confirmTransfer']);
