@@ -20,9 +20,9 @@ use App\Http\Controllers\AccountController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 
 Route::get('/account/history/', [AccountController::class, 'history']);

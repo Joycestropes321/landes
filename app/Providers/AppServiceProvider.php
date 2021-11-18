@@ -14,7 +14,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+      //check that app is local
+      if (!$this->app->isLocal()) {
+        //else register your services you require for production
+        $this->app['request']->server->set('HTTPS', true);
+    }
     }
 
     /**
@@ -24,9 +28,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (env('APP_ENV') != 'local') {
-            URL::forceScheme('https');
-        } 
+        // if (env('APP_ENV') != 'local') {
+        //     URL::forceScheme('https');
+        // } 
         Blade::directive('formatMoney', function ($money, $fractional=false) {
             if ($fractional) {
                 $money = sprintf('%.2f', $money);
