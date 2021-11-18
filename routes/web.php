@@ -1,10 +1,4 @@
-<?php
-header("Cache-Control: no-cache, must-revalidate");
-header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-header('Access-Control-Allow-Origin:  *');
-header('Access-Control-Allow-Methods:  POST, GET, OPTIONS, PUT, DELETE');
-header('Access-Control-Allow-Headers:  Content-Type, X-Auth-Token, Origin, Authorization');
-
+<?php 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AccountController;
@@ -29,14 +23,9 @@ Route::get('/', [LoginController::class, 'index']);
 Route::get('/auth', [LoginController::class, 'index']);
 Route::post('/auth/login', [LoginController::class, 'login']);
 Route::get('/home', [HomeController::class, 'index']);
-Route::get('/account/history/', [AccountController::class, 'history']);
 Route::get('/account/profile/', [AccountController::class, 'profile']);
 Route::get('/account/transfer/', [AccountController::class, 'transfer']);
 Route::get('/account/dashboard/', [AccountController::class, 'dashboard']);
 Route::get('/account/coming/', [AccountController::class, 'coming']);
 
 
-Route::post('/account/saveTax/', [AccountController::class, 'saveTax']);
-Route::post('/account/saveImt/', [AccountController::class, 'saveImt']);
-Route::post('/account/saveAtcc/', [AccountController::class, 'saveAtcc']);
-Route::post('/account/confirmTransfer/', [AccountController::class, 'confirmTransfer']);

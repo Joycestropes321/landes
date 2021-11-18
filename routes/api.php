@@ -7,6 +7,7 @@ header('Access-Control-Allow-Headers:  Content-Type, X-Auth-Token, Origin, Autho
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AccountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/account/history/', [AccountController::class, 'history']);
+Route::post('/account/saveTax/', [AccountController::class, 'saveTax']);
+Route::post('/account/saveImt/', [AccountController::class, 'saveImt']);
+Route::post('/account/saveAtcc/', [AccountController::class, 'saveAtcc']);
+Route::post('/account/confirmTransfer/', [AccountController::class, 'confirmTransfer']);
