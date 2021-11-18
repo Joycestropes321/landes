@@ -18,20 +18,7 @@ class AccountController extends Controller
     }
 public function history() {
 	 
-	$x = 1;
-	foreach (array_reverse($this->_hist) as $key => $value) {
-		 ?>
-
-<tr> 
-<td><?=$x;?></td>
-<td><?php echo $value['description']; ?> </td> 
-<td><?php echo $value['amount']; ?> </td> 
-<td><?php echo $value['ref']; ?> </td> 
-<td><?php echo $value['date']; ?> </td> 
-</tr>
-<?php 
-$x++; 
- } 
+  return response()->json(array_reverse($this->_hist));  
    
 }
 

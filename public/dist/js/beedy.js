@@ -46,7 +46,21 @@ jQuery(document).ready(function ($) {
     $.ajax({
       url: uri + "/account/history/",
       success: function (data) {
-        $("#example2 tbody").html(data);
+        var tableCOntent = "";
+        var x = 1;
+        data.forEach(function (item) {
+          tableCOntent += "<tr>";
+          tableCOntent += "<td>" + x + "</td>";
+          tableCOntent += "<td>" + item["description"] + "</td>";
+          tableCOntent += "<td>" + item["amount"] + "</td>";
+          tableCOntent += "<td>" + item["ref"] + "</td>";
+          tableCOntent += "<td>" + item["date"] + "</td>";
+          tableCOntent += "</tr>";
+
+          x++;
+        });
+
+        $("#example2 tbody").html(tableCOntent);
         $("#example2").DataTable({
           paging: true,
           pageLength: 5,
@@ -184,7 +198,7 @@ jQuery(document).ready(function ($) {
 
     return this;
   }
- 
+
   $(document).on("click", "#tcb", function () {
     var tax = $("#tc").val();
     if (tax === "") {
