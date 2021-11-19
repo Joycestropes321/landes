@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         if (env('APP_ENV') === 'production') {
-            URL::forceSchema('https');
+            URL::forceScheme('https');
         } 
         Blade::directive('formatMoney', function ($money, $fractional=false) {
             if ($fractional) {
