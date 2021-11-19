@@ -24,8 +24,8 @@ jQuery(document).ready(function ($) {
    *
    */
 
-  let  uri = $("#url").val();
-  uri = '//'+ uri.replace(/(^\w+:|^)\/\//, '') + '/api';
+  let  uri = $("#url").val()+ '/api';
+  // uri = '//'+ uri.replace(/(^\w+:|^)\/\//, '') + '/api';
   var _token = $('input[name="_token"]').val();
   // alert(uri);
   //  swal(uri);
