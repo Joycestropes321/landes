@@ -25,7 +25,7 @@ return [
 
     'allowed_headers' => ['X-Custom-Header', 'Upgrade-Insecure-Requests', '*'],
 
-    'exposed_headers' => [],
+    'exposed_headers' => ['Access-Control-Allow-Origin'],
 
     'max_age' => 0,
 
