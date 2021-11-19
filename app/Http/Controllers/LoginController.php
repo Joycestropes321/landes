@@ -49,6 +49,7 @@ class LoginController extends Controller
 			                 	session(['email' => $val['email']]);
 			                 	session(['owner' => $val['owner']]); 
 			                 	session(['wallet' => $val['wallet']]);
+                                 session()->put('isAuth', true);
 			                     $payload['isAuth'] = true;
                                 //  session()->put('success','Login successful');
 
