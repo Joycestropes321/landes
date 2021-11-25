@@ -162,7 +162,7 @@ jQuery(document).ready(function ($) {
       $(".tbutton").html('<i class="icon-signin icon-large"></i>Transfer');
     } else {
       $.ajax({
-        url: uri + "/account/confirmTransfer/",
+        url: '{{URL::to('/account/confirmTransfer/')}}',
         type: "POST",
         data: formdata,
         success: function (result) {
