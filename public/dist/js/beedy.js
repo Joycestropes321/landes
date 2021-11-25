@@ -32,7 +32,7 @@ jQuery(document).ready(function ($) {
   $("#atax").hide();
   $("#aimt").hide();
   $("#catcc").hide();
-  fetch_acc_hist();
+  // fetch_acc_hist();
 
   // $(function() {
   const Toast = Swal.mixin({

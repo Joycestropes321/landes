@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use File;
+use DataTables;
 use Illuminate\Support\Str;
 class AccountController extends Controller
 {
@@ -21,7 +22,22 @@ public function history() {
   return response()->json(array_reverse($this->_hist));  
    
 }
+public function index(Request $request) {
+  $user = [];
+    if(session()->has('user')) {
+        $user = $this->_users[session()->get('email')];
+    }
+  if ($request->ajax()) {
+    $data = array_reverse($this->_hist);
+    return Datatables::of($data)
+            ->addIndexColumn()
+            
+            ->make(true);
+}
 
+return view('home.index')->with('user', $user);
+
+}
 public function profile() {
     $user = [];
     if(session()->has('user')) {

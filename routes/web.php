@@ -18,10 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [LoginController::class, 'index']);
 Route::get('/auth', [LoginController::class, 'index']);
 Route::post('/auth/login', [LoginController::class, 'login']);
-Route::get('/home', [HomeController::class, 'index'])->middleware('authority');
+// Route::get('/home', [AccountController::class, 'index'])->middleware('authority');
 Route::get('/account/profile/', [AccountController::class, 'profile'])->middleware('authority');
 Route::get('/account/transfer/', [AccountController::class, 'transfer'])->middleware('authority');
 Route::get('/account/dashboard/', [AccountController::class, 'dashboard'])->middleware('authority');
 Route::get('/account/coming/', [AccountController::class, 'coming'])->middleware('authority');
 
 
+// Route::get('home', ['uses'=>'AccountController@index', 'as'=>'home.index']);
+Route::get('/home', [AccountController::class, 'index'])->name('account.index');

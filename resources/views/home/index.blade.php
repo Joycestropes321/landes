@@ -68,7 +68,7 @@
           <div class="col-lg-12">
             
               <div class="card-body table-responsive p-0">
-                <table id="example2" class="table table-striped table-valign-middle">
+                <table id="example2" class="table data-table table-striped table-valign-middle">
                   <thead>
                   <tr>
                     <th>S/N</th>
@@ -172,14 +172,31 @@
 <script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
-<script>
+<script type="text/javascript">
   $(function () {
-    // alert('hey');
+    
+    var table = $('.data-table').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: "{{ route('account.index') }}",
+        columns: [
+            {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+            {data: 'description', name: 'description'},
+            {data: 'amount', name: 'amount'},
+            {data: 'ref', name: 'ref'}, 
+            {data: 'date', name: 'date'}, 
+        ]
+    });
+    
+  });
+</script>
+{{-- <script>
+  $(function () { 
     $("#example1").DataTable({
       "responsive": true,
       "autoWidth": false,
     });
    
   });
-</script>  
+</script>   --}}
   @endsection
