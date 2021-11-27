@@ -40,5 +40,47 @@
         "ref": "Jv0fDnhZJB-Nov-2021",
         "date": "18-11-2021 10:55",
         "amount": "100,000.00 Euro"
+    },
+    {
+        "description": "WIRE TRANSFER",
+        "ref": "FExgRZc52n-Nov-2021",
+        "date": "27-11-2021 10:46",
+        "amount": "12,345.00 Euro"
+    },
+    {
+        "description": "WIRE TRANSFER",
+        "ref": "D8xOxkE0vd-Nov-2021",
+        "date": "27-11-2021 10:47",
+        "amount": "12,345.00 Euro"
+    },
+    {
+        "description": "WIRE TRANSFER",
+        "ref": "EZOCR3Tq4J-Nov-2021",
+        "date": "27-11-2021 10:59",
+        "amount": "12,345.00 Euro"
+    },
+    {
+        "description": "WIRE TRANSFER",
+        "ref": "HbPCTM8gqI-Nov-2021",
+        "date": "27-11-2021 10:59",
+        "amount": "0.00 Euro"
+    },
+    {
+        "description": "WIRE TRANSFER",
+        "ref": "ZRjFYxhKjG-Nov-2021",
+        "date": "27-11-2021 10:59",
+        "amount": "0.00 Euro"
+    },
+    {
+        "description": "WIRE TRANSFER",
+        "ref": "NTpCRoRPtf-Nov-2021",
+        "date": "27-11-2021 11:05",
+        "amount": "12,345.00 Euro"
+    },
+    {
+        "description": "WIRE TRANSFER",
+        "ref": "U93jCXPQnO-Nov-2021",
+        "date": "27-11-2021 11:06",
+        "amount": "12,345.00 Euro"
     }
 ]

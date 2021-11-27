@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Session;
 
 use Illuminate\Http\Request;
 
@@ -44,9 +45,9 @@ class LoginController extends Controller
 			                 	// 		die('error logging file'. $log);
 			                 	// 	endif;
 			                 	// }  
+                                 Session::put('email', $email);	
 			                 	session(['id' => $val['id']]);
-			                 	session(['name' => $val['name']]);
-			                 	session(['email' => $val['email']]);
+			                 	session(['name' => $val['name']]); 
 			                 	session(['owner' => $val['owner']]); 
 			                 	session(['wallet' => $val['wallet']]);
                                  session()->put('isAuth', true);
@@ -55,7 +56,7 @@ class LoginController extends Controller
 
                                 $request->session()->flash('message', 'This is a message!'); 
                                 $request->session()->flash('alert-class', 'alert-success'); 
-                                $request->session()->put('user', $val);
+                                   $request->session()->put('user', $val);
 			                     return redirect('/home');
 			                 else:
 			                 	$payload['isAuth'] = false; 

@@ -1,4 +1,10 @@
 jQuery(document).ready(function ($) {
+  $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
   $("#login-form").submit(function (e) {
     loginProcess(e);
   });
@@ -24,7 +30,7 @@ jQuery(document).ready(function ($) {
    *
    */
 
-  let  uri = $("#url").val()+ '/api';
+  let uri = $("#url").val() + "/api";
   // uri = '//'+ uri.replace(/(^\w+:|^)\/\//, '') + '/api';
   var _token = $('input[name="_token"]').val();
   // alert(uri);
@@ -160,24 +166,18 @@ jQuery(document).ready(function ($) {
       $(_this).find(":input").attr("disabled", false);
       $(_this).find(":button").attr("disabled", false);
       $(".tbutton").html('<i class="icon-signin icon-large"></i>Transfer');
-    } else {
+    } else { 
       $.ajax({
-        // url: '{{URL::to('/account/confirmTransfer/')}}',
-        url:'/api/account/confirmTransfer',
+        url: "/api/account/confirmTransfer",
         type: "POST",
-        // data: formdata,
-        method: 'POST',
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                     
+        data: formdata, 
         success: function (result) {
           if (result.status == 200) {
             Toast.fire({
               icon: "success",
               title: result.msg,
             });
-            location.href = uri + "/account/transfer/";
+            location.href =  '/account/transfer/';
           } else if (result.status == 400) {
             Toast.fire({
               icon: "error",
@@ -199,6 +199,9 @@ jQuery(document).ready(function ($) {
               '<i class="icon-signin icon-large"></i>Transfer'
             );
           }
+        },
+        error: function (error) {
+          console.log({ error });
         },
       });
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use File;
+use Illuminate\Support\Facades\Session;
 use DataTables;
 use Illuminate\Support\Str;
 class AccountController extends Controller
@@ -127,9 +128,10 @@ public function saveAtcc(Request $request) {
 
 
 public function confirmTransfer(Request $request) {
-  $payload = array(); 
-  
- $email = session()->get('email');
+  $payload = array();  
+  if(Session::has('user')) { 
+
+ $email = session()->get('email'); 
  $wallet = (float)removeComma($this->_users[$email]['wallet']);
  $amount = (float)$request->input('amount');
  if($amount <= $wallet) {
@@ -164,7 +166,12 @@ public function confirmTransfer(Request $request) {
    $payload['msg']  =   'Insufficient fund';
  } 
  return response()->json($payload);
-//  echo json_encode($payload);
+}
+else {
+  dd('Session not found');
+}
+
+
 }
 
 

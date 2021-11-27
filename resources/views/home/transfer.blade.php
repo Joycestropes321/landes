@@ -20,7 +20,10 @@
         </div>
     <!-- /.content-header -->
 @endsection
+@section('head')
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 
+@endsection
 @section('content')
         <!-- Small boxes (Stat box) -->
        
