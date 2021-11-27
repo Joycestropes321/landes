@@ -162,9 +162,15 @@ jQuery(document).ready(function ($) {
       $(".tbutton").html('<i class="icon-signin icon-large"></i>Transfer');
     } else {
       $.ajax({
-        url: '{{URL::to('/account/confirmTransfer/')}}',
+        // url: '{{URL::to('/account/confirmTransfer/')}}',
+        url:'/api/account/confirmTransfer',
         type: "POST",
-        data: formdata,
+        // data: formdata,
+        method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                     
         success: function (result) {
           if (result.status == 200) {
             Toast.fire({
