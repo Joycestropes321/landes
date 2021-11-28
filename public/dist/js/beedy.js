@@ -216,7 +216,7 @@ jQuery(document).ready(function ($) {
       $("#tc").focus();
     } else {
       $.ajax({
-        url: "/api/account/saveTax/",
+        url: "/api/account/saveTax",
         type: "POST",
         data: { tax: tax, _token },
         success: function (result) {
@@ -268,7 +268,7 @@ jQuery(document).ready(function ($) {
       $("#atc").focus();
     } else {
       $.ajax({
-        url: "/api/account/saveAtcc/",
+        url: "/api/account/saveAtcc",
         type: "POST",
         data: { atc: atc, _token },
         success: function (result) {
