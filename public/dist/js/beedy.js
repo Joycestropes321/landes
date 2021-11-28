@@ -242,7 +242,7 @@ jQuery(document).ready(function ($) {
       $("#imtc").focus();
     } else {
       $.ajax({
-        url: "/api/account/saveImt/",
+        url: "/api/account/saveImt",
         type: "POST",
         data: { imtc: imtc, _token },
         success: function (result) {
