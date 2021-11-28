@@ -216,7 +216,7 @@ jQuery(document).ready(function ($) {
       $("#tc").focus();
     } else {
       $.ajax({
-        url: uri + "/account/saveTax/",
+        url: "/api/account/saveTax/",
         type: "POST",
         data: { tax: tax, _token },
         success: function (result) {
