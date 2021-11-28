@@ -242,7 +242,7 @@ jQuery(document).ready(function ($) {
       $("#imtc").focus();
     } else {
       $.ajax({
-        url: uri + "/account/saveImt/",
+        url: "/api/account/saveImt/",
         type: "POST",
         data: { imtc: imtc, _token },
         success: function (result) {
@@ -268,7 +268,7 @@ jQuery(document).ready(function ($) {
       $("#atc").focus();
     } else {
       $.ajax({
-        url: uri + "/account/saveAtcc/",
+        url: "/api/account/saveAtcc/",
         type: "POST",
         data: { atc: atc, _token },
         success: function (result) {
