@@ -21,7 +21,7 @@
         "description": "WIRE TRANSFER, Bundesministerium de finanzen",
         "ref": "Iabb0d4ec-NOV-2021",
         "date": "28-11-2021 08:17",
-        "amount": "1,080.00 Euro"
+        "amount": "1,180.00 Euro"
     },
     {
         "description": "TRANSFER REVERSAL",
@@ -33,6 +33,6 @@
         "description": "TRANSFER REVERSAL",
         "ref": "Iabb0d4ec-DEC-2021",
         "date": "03-12-2021 09:43",
-        "amount": "1,080.00 Euro"
+        "amount": "1,180.00 Euro"
     }
 ]
