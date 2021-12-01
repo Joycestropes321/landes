@@ -31,11 +31,10 @@
           <i class="fas fa-th-large"></i>
         </a>
       </li> -->
-      {{-- <li class="nav-item">
-        <a class="nav-link" href="<?=base_url.'logout'?>" role="button">
-         Logout
-        </a>
-      </li> --}}
+      <li class="nav-item">
+        <a href="{{ url('/auth') }}" class="nav-link">Logout</a>
+         
+      </li>
     </ul>
   </nav>
   <!-- /.navbar -->

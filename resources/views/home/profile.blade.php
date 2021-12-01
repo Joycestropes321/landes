@@ -84,7 +84,7 @@
                 <strong><i class="fas fa-user mr-1"></i> Next of kin</strong>
 
                 <p class="text-muted">
-                  <span class="tag tag-danger">-</span> 
+                  <p class="text-muted"> {{ $user['nok'] }}</p>
                 </p>
 
                 <hr>
