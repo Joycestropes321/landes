@@ -1,9 +1,4 @@
-/*
- * Author: Abdullah A Almsaeed
- * Date: 4 Jan 2014
- * Description:
- *      This is a demo file used only for the main dashboard (index.html)
- **/
+
 
 $(function () {
 
@@ -45,7 +40,7 @@ $(function () {
   //$('#revenue-chart').get(0).getContext('2d');
 
   var salesGraphChartData = {
-    labels  : ['2021 Jan 25', '2021 Jan 28'],
+    labels  : ['2021 Nov 01', '2021 Nov 12', '2021 Nov 25', '2021 Nov 28', '2021 Nov 29', '2021 Dec 03'],
     datasets: [
       {
         label               : 'Account Analysis',
@@ -58,7 +53,7 @@ $(function () {
         pointHoverRadius    : 7,
         pointColor          : '#efefef',
         pointBackgroundColor: '#efefef',
-        data                : [1103, 60000000]
+        data                : [33429000, 20524569, 60000000, 5500, 100554931, 46000]
       }
     ]
   }
