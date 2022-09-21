@@ -16,21 +16,21 @@
         "logo": "perkins.jpg",
         "occupation": "Lawyer"
     },
-    "joycestropes@gmail.com": {
+    "Kristinapeace90@gmail.com": {
         "id": 2,
         "name": "Kristina Peace",
         "email": "joycestropes@gmail.com",
         "password": "Bernhard",
-        "wallet": "200,547,000.00",
+        "wallet": "550,000,000.00",
         "currency": "fa fa-euro-sign",
         "tax": "",
         "imt": "",
         "atcc": "",
         "owner": "on",
-        "education": "Freie Universit\u00e4t Berlin",
-        "location": "Berlin, Germany",
+        "education": "",
+        "location": "",
         "nok": "Bernhard",
-        "logo": "joyce.jpeg",
+        "logo": "peace.jpeg",
         "occupation": "Self Employed"
     }
 }
