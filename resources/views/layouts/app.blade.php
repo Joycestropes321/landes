@@ -64,7 +64,7 @@
 </div>
        <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <center><strong>Copyright &copy; 2014-2021 <a href="#">Berliner Sparkasse Bank</a>.</strong></center>
+    <center><strong>Copyright &copy; 2014-2022 <a href="#">BBBank eG Geldautomat</a>.</strong></center>
     All rights reserved. 
   </footer>
 
