@@ -5,7 +5,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="{{ asset('dist/img/logo.png') }}">
-  <title>App Name - @yield('title')</title>
+  <title>Online Banking - @yield('title')</title>
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
