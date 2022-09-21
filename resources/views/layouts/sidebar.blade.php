@@ -5,7 +5,7 @@
     <a href="#" class="brand-link">
        <img src="{{ asset('dist/img/logo.png') }}" class="brand-image img-circle elevation-3"  
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Berliner sparkasse</span>
+      <span class="brand-text font-weight-light">BBBank eG Geldautomat</span>
     </a>
 
     <!-- Sidebar -->
