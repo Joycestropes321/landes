@@ -31,7 +31,8 @@
         <div class="row">
           <div class="col-md-5 col-sm-6 col-12">
             <div class="info-box">
-              <span class="info-box-icon bg-info"><i class="{{  $user['currency']   }}"></i></span>
+              <!-- <span class="info-box-icon bg-info"><i class="{{  $user['currency']   }}"></i></span> -->
+              <span class="info-box-icon bg-info"><i class="fa">Nok</i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">Balance</span>
