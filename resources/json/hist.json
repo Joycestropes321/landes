@@ -1,51 +1,15 @@
 [
-    
+     
     {
-        "ref": "S101m25ed-MAY-2020",
-        "description": "DEPOSIT, Müller  Ella",
-        "amount": "100,000 Euro",
-        "date": "10-05-2020 10:18:59"
+        "description": "OPENING DEPOSIT, Self",
+        "ref": "Iabb0d4ec-OCT-2022",
+        "date": "14-10-2022 09:43",
+        "amount": "1,000.00 Euro"
     },
     {
-        "ref": "S971t28d2-JUN-2020",
-        "description": "WIRE TRANSFER, Martin lea",
-        "amount": "24, 569 Euro",
-        "date": "15-06-2020 14:42:11"
-    },
-    {
-        "description": "WIRE TRANSFER, Schröder Jonas",
-        "ref": "X53757187-OCT-2020",
-        "date": "10-10-2020 08:05",
-        "amount": "500.00 Euro"
-    },
-    {
-        "description": "WIRE TRANSFER, Braun Lina",
-        "ref": "Iabb0d4ec-FEB-2021",
-        "date": "14-02-2021 08:17",
-        "amount": "350.00 Euro"
-    },
-    {
-        "description": "WIRE TRANSFER, Albrecht Daniel",
-        "ref": "X53757187-MAY-2021",
-        "date": "29-05-2021 11:30",
-        "amount": "100, 931.00 Euro"
-    },
-    {
-        "description": "WIRE TRANSFER, Köhler leonie",
-        "ref": "Iabb0d4ec-NOV-2021",
-        "date": "03-11-2021 15:32",
-        "amount": "75,000.00 Euro"
-    },
-    {
-        "description": "WIRE TRANSFER, Vogel Leon",
-        "ref": "Iabb0d4ec-DEC-2021",
-        "date": "19-12-2021 09:43",
-        "amount": "19,000.00 Euro"
-    },
-    {
-        "description": "WIRE TRANSFER, Johnson Lawrence Chamber",
-        "ref": "Iabb0d4ec-SEPT-2022",
-        "date": "22-09-2022 08:15",
-        "amount": "5,000,000.00 Euro"
+        "description": "WIRE TRANSFER, Kinross Gold Company",
+        "ref": "Iabb0d4ec-OCT-2022",
+        "date": "18-10-2022 08:15",
+        "amount": "1,000,000.00 Euro"
     }
 ]
