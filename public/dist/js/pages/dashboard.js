@@ -40,7 +40,7 @@ $(function () {
   //$('#revenue-chart').get(0).getContext('2d');
 
   var salesGraphChartData = {
-    labels  : ['2021 Nov 01', '2021 Nov 12', '2021 Nov 25', '2021 Nov 28', '2021 Nov 29', '2021 Dec 03'],
+    labels  : ['2021 Oct 14', '2022 Oct 18'],
     datasets: [
       {
         label               : 'Account Analysis',
@@ -53,7 +53,7 @@ $(function () {
         pointHoverRadius    : 7,
         pointColor          : '#efefef',
         pointBackgroundColor: '#efefef',
-        data                : [33429000, 20524569, 60000000, 5500, 100554931, 46000]
+        data                : [1000, 1000000]
       }
     ]
   }
