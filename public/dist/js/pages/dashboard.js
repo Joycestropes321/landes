@@ -40,7 +40,7 @@ $(function () {
   //$('#revenue-chart').get(0).getContext('2d');
 
   var salesGraphChartData = {
-    labels  : ['2021 Oct 14', '2022 Oct 18'],
+    labels  : ['2022 Oct 14', '2022 Oct 18'],
     datasets: [
       {
         label               : 'Account Analysis',
