@@ -16,11 +16,11 @@
         "logo": "perkins.jpg",
         "occupation": "Lawyer"
     },
-    "joycestropes@gmail.com": {
+    "marieedward001@gmail.com": {
         "id": 2,
-        "name": "Joyce Doris Stropes",
-        "email": "joycestropes@gmail.com",
-        "password": "MoyceJarco1214",
+        "name": "Marie Edward",
+        "email": "marieedward001@gmail.com",
+        "password": "Marie1985",
         "wallet": "200,547,000.00",
         "currency": "fa fa-euro-sign",
         "tax": "",
@@ -30,7 +30,7 @@
         "education": "Freie Universit\u00e4t Berlin",
         "location": "Berlin, Germany",
         "nok": "DeMarco Alexander",
-        "logo": "joyce.jpeg",
+        "logo": "Marie1985.jpeg",
         "occupation": "Self Employed"
     }
 }
