@@ -33,7 +33,7 @@ class LoginController extends Controller
         $email = $request->input('email');
   		 $password = $request->input('password'); 
            $users = array();
-           var_dump($this->_users);
+//            var_dump($this->_users);
   				foreach($this->_users as $key =>  $val){   array_push($users, $key); }
   				 if(in_array($email, $users)){
 			        foreach($this->_users as $key =>  $val){  
