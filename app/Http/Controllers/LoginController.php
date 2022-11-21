@@ -11,7 +11,7 @@ class LoginController extends Controller
     public function __construct() {
         $path = base_path("resources/json/users.json"); 
         $this->_users = json_decode(file_get_contents($path), true); 
-        var_dump($users_file);
+        var_dump($this->_users);
     }
     /**
      * Display a listing of the resource.
