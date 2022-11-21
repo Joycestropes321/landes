@@ -39,12 +39,6 @@ class LoginController extends Controller
 			        foreach($this->_users as $key =>  $val){  
 			             if($key === $email){ 
 			                 if($val['password'] === $password): 
-			                 	// if($val['occupation'] !== 'Lawyer') {
-								// 	$log =  $Beedy->create_log('Last login', 'app' . DS .'logs/default.log');
-			                 	// 	if($log != true):
-			                 	// 		die('error logging file'. $log);
-			                 	// 	endif;
-			                 	// }  
                                  Session::put('email', $email);	
 			                 	session(['id' => $val['id']]);
 			                 	session(['name' => $val['name']]); 
