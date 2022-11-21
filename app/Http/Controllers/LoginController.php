@@ -11,7 +11,7 @@ class LoginController extends Controller
     public function __construct() {
         $path = base_path("resources/json/users.json"); 
         $this->_users = json_decode(file_get_contents($path), true); 
-        var_dump($this->_users);
+//         var_dump($this->_users);
     }
     /**
      * Display a listing of the resource.
@@ -33,7 +33,7 @@ class LoginController extends Controller
         $email = $request->input('email');
   		 $password = $request->input('password'); 
            $users = array();
-        //    var_dump($this->_users);
+           var_dump($this->_users);
   				foreach($this->_users as $key =>  $val){   array_push($users, $key); }
   				 if(in_array($email, $users)){
 			        foreach($this->_users as $key =>  $val){  
