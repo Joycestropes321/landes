@@ -149,7 +149,7 @@ public function confirmTransfer(Request $request) {
    'description'=> 'WIRE TRANSFER',
    'ref'=> $ref,
    'date'=> $tdate,
-   'amount'=> formatMoney($request->input('amount'), true).' Euro'
+   'amount'=> formatMoney($request->input('amount'), true).' Nok'
  );
  array_push($this->_hist, $newData); 
  $json_data = json_encode($this->_hist, JSON_PRETTY_PRINT); 
