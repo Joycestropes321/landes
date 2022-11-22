@@ -11,5 +11,16 @@
         "ref": "Iabb0d4ec-OCT-2022",
         "date": "18-10-2022 08:15",
         "amount": "1,000,000.00 Euro"
-    }
+    },
+    {
+        "description": "DEBIT TRANSACTION",
+        "ref": "X53757187-NOV-2022",
+        "date": "21-11-2022 08:05",
+        "amount": "1, 200, 000.00 Nok" 
+    }, {
+        "description": "DISPENSE ERROR REVERSAL",
+        "ref": "RSVL-668444151-NOV-2022",
+        "date": "22-11-2022 11:01",
+        "amount": "1, 200, 000.00 Nok" 
+    },
 ]
