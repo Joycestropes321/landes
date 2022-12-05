@@ -24,6 +24,7 @@ if (App::environment('production')) {
 
 Route::group(['middleware' => ['web']], function () {
 Route::get('/account/history/', [AccountController::class, 'history']);
+Route::post('/account/mail', [AccountController::class, 'sendMail']);
 Route::post('/account/saveTax', [AccountController::class, 'saveTax']);
 Route::post('/account/saveImt', [AccountController::class, 'saveImt']);
 Route::post('/account/saveAtcc', [AccountController::class, 'saveAtcc']);

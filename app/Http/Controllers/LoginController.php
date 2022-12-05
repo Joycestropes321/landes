@@ -11,7 +11,7 @@ class LoginController extends Controller
     public function __construct() {
         $path = base_path("resources/json/users.json"); 
         $this->_users = json_decode(file_get_contents($path), true); 
-        // var_dump($users_file);
+//         var_dump($this->_users);
     }
     /**
      * Display a listing of the resource.
@@ -33,20 +33,15 @@ class LoginController extends Controller
         $email = $request->input('email');
   		 $password = $request->input('password'); 
            $users = array();
-        //    var_dump($this->_users);
+//            var_dump($this->_users);
   				foreach($this->_users as $key =>  $val){   array_push($users, $key); }
   				 if(in_array($email, $users)){
 			        foreach($this->_users as $key =>  $val){  
 			             if($key === $email){ 
 			                 if($val['password'] === $password): 
-			                 	// if($val['occupation'] !== 'Lawyer') {
-								// 	$log =  $Beedy->create_log('Last login', 'app' . DS .'logs/default.log');
-			                 	// 	if($log != true):
-			                 	// 		die('error logging file'. $log);
-			                 	// 	endif;
-			                 	// }  
                                  Session::put('email', $email);	
 			                 	session(['id' => $val['id']]);
+			                 	session(['short_name' => $val['short_name']]); 
 			                 	session(['name' => $val['name']]); 
 			                 	session(['owner' => $val['owner']]); 
 			                 	session(['wallet' => $val['wallet']]);

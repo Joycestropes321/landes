@@ -64,6 +64,15 @@
                         </div>
                       </div>
 
+
+                      <div class="form-group row">
+                        <label for="inputName"  class="col-sm-12 col-form-label"> Beneficiary Name</label> 
+                        <div class="col-sm-12">
+                              <input type="text" name="beneficiary" class="form-control" required>
+                        </div>
+                      </div>
+
+
                         <div class="form-group row">
                         <label for="inputName" class="col-sm-12 col-form-label">Swift Code</label> 
                          <div class="col-sm-12">
@@ -71,10 +80,24 @@
                          </div>
                       </div>
 
+                      <div class="form-group row">
+                        <label for="inputName"  class="col-sm-12 col-form-label"> Postal Code</label> 
+                        <div class="col-sm-12">
+                              <input type="text" name="postal" class="form-control" required>
+                        </div>
+                      </div>
+
                         <div class="form-group row">
                         <label for="inputName" class="col-sm-12 col-form-label">Amount</label> 
                         <div class="col-sm-12">
                              <input type="number" name="amount" min='0' max="@removeComma($user['wallet'])" class="form-control"> 
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="inputName"  class="col-sm-12 col-form-label">  Purpose of Transfer</label> 
+                        <div class="col-sm-12">
+                              <input type="text" name="purpose" class="form-control" required>
                         </div>
                       </div>
 

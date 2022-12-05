@@ -31,7 +31,7 @@
         <div class="row">
           <div class="col-md-5 col-sm-6 col-12">
             <div class="info-box">
-              <span class="info-box-icon bg-info"><i class="{{  $user['currency']   }}"></i></span>
+               <span class="info-box-icon bg-info"><i class="{{  $user['currency']   }}"></i></span>  
 
               <div class="info-box-content">
                 <span class="info-box-text">Balance</span>
@@ -44,7 +44,7 @@
           <!-- /.col -->
          
           <div class="col-md-3 col-sm-6 col-12">
-            <a href="{{ url('/account/transfer') }}">
+            <a href="{{ url('/public/account/transfer') }}">
             <button class="btn btn-primary">Transfer Fund</button>
           </a>
             

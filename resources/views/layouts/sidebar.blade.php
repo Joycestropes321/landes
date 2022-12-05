@@ -5,7 +5,7 @@
     <a href="#" class="brand-link">
        <img src="{{ asset('dist/img/logo.png') }}" class="brand-image img-circle elevation-3"  
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Berliner sparkasse</span>
+      <span class="brand-text font-weight-light">Express Union</span>
     </a>
 
     <!-- Sidebar -->
@@ -16,7 +16,7 @@
           <img src="{{ asset('dist/img/'.$user["logo"]) }}" class="img-circle elevation-2" alt="User Image" />
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{ $user['name'] }}</a>
+          <a href="#" class="d-block">{{ $user['short_name'] }}</a>
         </div>
       </div>
 

@@ -19,11 +19,15 @@
   <!-- Custom styles -->
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
   <link href="{{ asset('css/style-responsive.css') }}" rel="stylesheet" />
-
+<style>
+    
+</style>
   @yield('head')
  
 </head>
-<body>
+<body
+        style="background-image: url({{ asset('landing/images/hero_2.jpg') }});"
+        data-aos="fade">
 
 <input type="hidden" id="url" value="{{ url('') }}">
 

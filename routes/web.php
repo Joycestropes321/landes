@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
  
-Route::get('/', [LoginController::class, 'index']);
+// Route::get('/', [LoginController::class, 'index']);
+Route::get('/', function() {
+     return view('landing');
+});
 Route::get('/auth', [LoginController::class, 'index']);
 Route::post('/auth/login', [LoginController::class, 'login']);
 // Route::get('/home', [AccountController::class, 'index'])->middleware('authority');
